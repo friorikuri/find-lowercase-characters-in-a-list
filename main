@@ -1,0 +1,30 @@
+mess = "CCCCCdeddfddf"
+
+new_mess = []
+i = True
+n = 0
+def f1(iterater, letter_count):
+	while iterater == True:
+		if mess[letter_count].islower():
+			new_mess.append(mess[letter_count])
+			print "Ya zapisal ety bykvy, vse ok", mess[letter_count]
+			print new_mess
+			iterater = False
+			letter_count = letter_count +1
+			f2(iterater, letter_count)
+		else:
+			letter_count = letter_count + 1 
+			iterater = True
+f1(i,n)
+def f2(iterater, letter_count):
+	if mess[letter_count].islower():
+		new_mess.append(mess[letter_count])
+		print "Ya zapisal ety bykvy, vse ok", mess[letter_count]
+		print new_mess
+		iterater = False
+#		f2(iterater, letter_count)
+	else: # if not, then I should somehow change the global var i and n
+	#	letter_count = letter_count + 1  
+	#	iterater = True
+
+# python e1.py
