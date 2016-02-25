@@ -1,25 +1,25 @@
-mess = "CdEcafddfsdfsdfsdlfdkfjdDKFJDFKJdDFDFDFjkjkjkjkjkFFFFDKFJKfFfjDKfjDDDfKKKkfjkdfjkdjKDfjkd"
-new_mess = []
-i = True
-n = 0
-
 while i == True:
-	if mess[n:n+3].isupper():
+	if mess[n].islower() and mess[n+1:n+4].isupper():
 		print "Almost..."
-		if mess[n+3].islower():
+		if mess[n+4].islower():
 			print "Almost..."
-			if mess[n+4:n+7].isupper():
-				new_mess.append(mess[n:n+7])
+			if mess[n+5:n+8].isupper() and mess[n+8].islower():
+				new_mess.append(mess[n+1:n+8])
 				print new_mess
 				print "This is the index of the first character:",n
-				print "This is the index of the last character:",n+7
+				print "This is the index of the last character:",n+6
 				i = False
 			else:
-				n += 1
-				i = True
+				n += 7
+				print 
+				i = True			
 		else:
-			n += 1
+			n += 5
+			print 
 			i = True
+
 	else:
 		n += 1
+		print 
 		i = True
+
