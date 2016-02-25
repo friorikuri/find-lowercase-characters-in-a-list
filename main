@@ -1,30 +1,39 @@
-mess = "CCCCCdeddfddf"
-
+mess = "CdEcafddf"
 new_mess = []
 i = True
 n = 0
+
 def f1(iterater, letter_count):
 	while iterater == True:
 		if mess[letter_count].islower():
 			new_mess.append(mess[letter_count])
-			print "Ya zapisal ety bykvy, vse ok", mess[letter_count]
-			print new_mess
 			iterater = False
 			letter_count = letter_count +1
-			f2(iterater, letter_count)
+			global n
+			n = letter_count
+			print n
+			print new_mess
+			print "this is the n of f1: %d" % n
+			return n
 		else:
 			letter_count = letter_count + 1 
 			iterater = True
-f1(i,n)
-def f2(iterater, letter_count):
-	if mess[letter_count].islower():
-		new_mess.append(mess[letter_count])
-		print "Ya zapisal ety bykvy, vse ok", mess[letter_count]
+	
+def f2(letter_count2):
+	print "This is the start of f2"
+	if mess[letter_count2].islower():
+		new_mess.append(mess[letter_count2])
+		print "We have appended 2 n to the list!" 
 		print new_mess
-		iterater = False
-#		f2(iterater, letter_count)
-	else: # if not, then I should somehow change the global var i and n
-	#	letter_count = letter_count + 1  
-	#	iterater = True
+		global n
+		n = letter_count2 + 1
+		print "By the way, this is n after f2: %d" % n
+	else: 
+		print ":("
+		global n
+		n = letter_count2 + 1
+		return f1(i,n)
+f1(i,n)
+f2(n)
 
-# python e1.py
+# python ex15_sample1.py
