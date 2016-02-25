@@ -3,37 +3,23 @@ new_mess = []
 i = True
 n = 0
 
-def f1(iterater, letter_count):
-	while iterater == True:
-		if mess[letter_count].islower():
-			new_mess.append(mess[letter_count])
-			iterater = False
-			letter_count = letter_count +1
-			global n
-			n = letter_count
-			print n
-			print new_mess
-			print "this is the n of f1: %d" % n
-			return n
+while i == True:
+	if mess[n:n+3].isupper():
+		print "Almost..."
+		if mess[n+3].islower():
+			print "Almost..."
+			if mess[n+4:n+7].isupper():
+				new_mess.append(mess[n:n+7])
+				print new_mess
+				print "This is the index of the first character:",n
+				print "This is the index of the last character:",n+7
+				i = False
+			else:
+				n += 1
+				i = True
 		else:
-			letter_count = letter_count + 1 
-			iterater = True
-	
-def f2(letter_count2):
-	print "This is the start of f2"
-	if mess[letter_count2].islower():
-		new_mess.append(mess[letter_count2])
-		print "We have appended 2 n to the list!" 
-		print new_mess
-		global n
-		n = letter_count2 + 1
-		print "By the way, this is n after f2: %d" % n
-	else: 
-		print ":("
-		global n
-		n = letter_count2 + 1
-		return f1(i,n)
-f1(i,n)
-f2(n)
-
-# python ex15_sample1.py
+			n += 1
+			i = True
+	else:
+		n += 1
+		i = True
