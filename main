@@ -1,25 +1,25 @@
 while i == True:
 	if mess[n].islower() and mess[n+1:n+4].isupper():
-		print "Almost..."
+#		print "Almost..."
 		if mess[n+4].islower():
-			print "Almost..."
+#			print "Almost..."
 			if mess[n+5:n+8].isupper() and mess[n+8].islower():
 				new_mess.append(mess[n+1:n+8])
+				new_mess2.append(mess[n+4])
 				print new_mess
+				print new_mess2
 				print "This is the index of the first character:",n
 				print "This is the index of the last character:",n+6
 				i = False
 			else:
 				n += 7
-				print 
 				i = True			
 		else:
 			n += 5
-			print 
 			i = True
 
 	else:
-		n += 1
-		print 
+		n += 1 
 		i = True
+
 
